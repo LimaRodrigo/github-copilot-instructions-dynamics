@@ -1,0 +1,13 @@
+- Utilizar xUnit
+- Utilizar FakeXrmEasy
+- Seguir padrão AAA
+- Utilizar naming Should_When
+- Criar testes pequenos
+- Um cenário por teste
+- Utilizar builders
+- Evitar mocks excessivos
+- Validar exceptions
+- Priorizar legibilidade
+- Evitar lógica complexa nos testes
+- Garantir isolamento entre testes
+- Utilizar asserts específicos
