@@ -1,0 +1,4 @@
+<Solution>
+	<Project Path="src\Account.Extend\Account.Extend.csproj" />
+	<Project Path="tests\Account.Extend.Tests\Account.Extend.Tests.csproj" />
+</Solution>
