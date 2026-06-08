@@ -9,6 +9,8 @@ Este é um projeto 100% C# de plugins para Microsoft Dynamics 365 / Power Platfo
 - Todo plugin deve seguir rigorosamente o fluxo mínimo de execução
 - Sempre que um novo plugin for criado, deve ser gerado automaticamente o projeto de testes correspondente
 - Todo projeto *.csproj deve ser addicionado ao arquivo de solução `*.sln` na raiz do repositório
+- Todo projeto deve conter um arquivo `README.md` com descrição e instruções de uso
+- Todo projeto *.csproj deve ser gerado com o SDK-style e usar PackageReference para dependências
 
 **Nomeação de projetos:**
 - Projeto principal: `src/NomeDoPlugin`
