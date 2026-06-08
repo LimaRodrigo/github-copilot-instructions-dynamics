@@ -17,7 +17,7 @@ namespace Account.Extend.Domain.ValueObjects
         /// Cria uma instância de CNPJ após validação.
         /// Lança InvalidCNPJException caso o CNPJ seja inválido.
         /// </summary>
-        public static CNPJ Create(string cnpj)
+        public static CNPJ Create(string? cnpj)
         {
             if (!IsValid(cnpj))
             {
@@ -30,7 +30,7 @@ namespace Account.Extend.Domain.ValueObjects
         /// <summary>
         /// Valida um número de CNPJ usando o algoritmo de dígito verificador.
         /// </summary>
-        private static bool IsValid(string cnpj)
+        private static bool IsValid(string? cnpj)
         {
             if (string.IsNullOrWhiteSpace(cnpj))
                 return false;
@@ -50,7 +50,7 @@ namespace Account.Extend.Domain.ValueObjects
             return ValidateCheckDigits(cnpj);
         }
 
-        private static string RemoveFormatting(string cnpj)
+        private static string RemoveFormatting(string? cnpj)
         {
             return cnpj?.Replace(".", "").Replace("/", "").Replace("-", "").Trim() ?? string.Empty;
         }
@@ -94,7 +94,7 @@ namespace Account.Extend.Domain.ValueObjects
                 return false;
 
             // Validar segundo dígito verificador
-            int[] multiplier2 = { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3 };
+            int[] multiplier2 = { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             sum = 0;
 
             for (int i = 0; i < 13; i++)

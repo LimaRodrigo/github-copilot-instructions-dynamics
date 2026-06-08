@@ -22,7 +22,7 @@ namespace Account.Extend.Services
         /// Valida o CNPJ fornecido.
         /// Lança InvalidCNPJException se o CNPJ for inválido.
         /// </summary>
-        public void ValidateCNPJ(string cnpjValue)
+        public void ValidateCNPJ(string? cnpjValue)
         {
             _logger.LogInformation("Iniciando validação de CNPJ: {CNPJ}", MaskCNPJ(cnpjValue));
 
@@ -54,12 +54,13 @@ namespace Account.Extend.Services
         /// <summary>
         /// Mascara o CNPJ para fins de logging, mostrando apenas os últimos 4 dígitos.
         /// </summary>
-        private string MaskCNPJ(string cnpj)
+        private string MaskCNPJ(string? cnpj)
         {
-            if (string.IsNullOrWhiteSpace(cnpj) || cnpj.Length < 4)
+            string clean = cnpj?.Replace(".", "").Replace("/", "").Replace("-", "") ?? string.Empty;
+
+            if (clean.Length < 4)
                 return "****";
 
-            string clean = cnpj.Replace(".", "").Replace("/", "").Replace("-", "");
             return clean.Substring(0, clean.Length - 4).Replace(clean.Substring(0, clean.Length - 4), "****") + clean.Substring(clean.Length - 4);
         }
     }
